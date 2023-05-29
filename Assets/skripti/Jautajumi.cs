@@ -1,15 +1,16 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Jautajumi : MonoBehaviour {
 
-    private List<string> fragmenti = new List<string> {"kā mani sauc?", "mana suņa krāsa?", "kad man ir dzimšanas diena?", "Par ko es mācos?"};
-    private List<string> fragmenti1 = new List<string> {"Kristians", "Balta", "4", "Pavāru"};
-    private List<string> fragmenti2 = new List<string> {"Alekss", "Melna", "5", "Programmētāju"};
-    private List<string> fragmenti3 = new List<string> {"Ralfs", "Dzelten", "6", "Frizieri"};
-    private List<string> fragmenti4 = new List<string> {"Tomijs", "Zila", "7", "Mehatroniķis"};
+    private List<string> fragmenti = new List<string> {"kā mani sauc?", "mana suņa krāsa?", "kad man ir dzimšanas diena?", "Par ko es mācos?",
+    "cik man ir pirksti?"," kā sauc manu suni?","Kurā skolā es mācos?","kādu telefona ražotāju es izmantoju?","manas māsas vārds?","mana skolotāja vārds"};
+    private List<string> fragmenti1 = new List<string> {"Kristians", "Balta", "4", "Pavāru","10","Madars","UML","Samsung","Sigita","kristoferis"};
+    private List<string> fragmenti2 = new List<string> {"Alekss", "Melna", "5", "Programmētāju","9","dora","LVT","HUAWEI","kristians","māris"};
+    private List<string> fragmenti3 = new List<string> {"Ralfs", "Dzelten", "6", "Frizieri","8","suns","RTU","lGato","Selita","rihards"};
+    private List<string> fragmenti4 = new List<string> {"Tomijs", "Zila", "7", "Mehatroniķis","7","džeina","ugunsdzēsējs","iphone","Anna","Kristaps"};
 
     private int indekss = 0;
 
@@ -20,6 +21,7 @@ public class Jautajumi : MonoBehaviour {
     public GameObject toggle2;
     public GameObject toggle3;
     public GameObject toggle4;
+    public GameObject BeiguScreen;
 
     private void Start()
     {
@@ -30,10 +32,95 @@ public class Jautajumi : MonoBehaviour {
     {
         if (indekss < fragmenti.Count)
         {
-            if (!IsAnyToggleSelected())
+            if (!VaiToggleIrIeslegts())
                 return;
 
+                if (indekss == 0)
+        {
+            if (AtbildesTogglePogas[0].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta1");
+            }
+            
+        }if (indekss == 1){
+            if (AtbildesTogglePogas[0].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta2");
+            }
+
+        }
+         if (indekss == 2){
+            if (AtbildesTogglePogas[3].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta3");
+            }
+
+        }
+         if (indekss == 3){
+            if (AtbildesTogglePogas[3].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta4");
+            }
+
+        }
+         if (indekss == 4){/////////
+            if (AtbildesTogglePogas[0].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta5");
+            }
+
+        }
+         if (indekss == 5){
+            if (AtbildesTogglePogas[1].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta6");
+            }
+
+        }
+         if (indekss == 6){
+            if (AtbildesTogglePogas[1].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta7");
+            }
+
+        }
+         if (indekss == 7){
+            if (AtbildesTogglePogas[0].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta8");
+            }
+
+        }
+         if (indekss == 8){
+            if (AtbildesTogglePogas[2].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta9");
+            }
+
+        }
+         if (indekss == 9){
+            if (AtbildesTogglePogas[3].isOn)
+            {
+               
+                Debug.Log("Pareizā atbilde tika ievadīta10");
+            }
+
+        }
+
+
             indekss++;
+        if(indekss==10){
+             BeiguScreen.SetActive(!BeiguScreen.activeSelf);
+        }
             IzvaditJautajumu();
         }
     }
@@ -67,7 +154,7 @@ public class Jautajumi : MonoBehaviour {
         }
     }
 
-    private bool IsAnyToggleSelected()
+    private bool VaiToggleIrIeslegts()
     {
         for (int i = 0; i < AtbildesTogglePogas.Length; i++)
         {
