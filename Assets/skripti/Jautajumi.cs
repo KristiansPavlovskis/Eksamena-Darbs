@@ -14,6 +14,7 @@ public class Jautajumi : MonoBehaviour {
     private List<string> fragmenti4 = new List<string> {"Tomijs", "Zila", "7", "Mehatroniķis","7","džeina","ugunsdzēsējs","iphone","Anna","Kristaps"};
 
     private int indekss = 0;
+    private int PareizasAtbildes = 0;
  private bool Taimers = true;
     public float TaimeraStarts;
     public float TaimeraBeigas;
@@ -26,8 +27,13 @@ public class Jautajumi : MonoBehaviour {
     public GameObject toggle4;
     public GameObject BeiguScreen;
     public GameObject TextaLaiks;
+    public GameObject CikNoCik;
+    public GameObject Zvaigzne1;
+    public GameObject Zvaigzne2;
+    public GameObject Zvaigzne3;
     private void Start()
     {
+        Taimers = true;
         IzvaditJautajumu();
         SaktTimer();
     }
@@ -60,12 +66,13 @@ public class Jautajumi : MonoBehaviour {
             {
                
                 Debug.Log("Pareizā atbilde tika ievadīta1");
+                PareizasAtbildes++;
             }
             
         }if (indekss == 1){
             if (AtbildesTogglePogas[0].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta2");
             }
 
@@ -73,15 +80,15 @@ public class Jautajumi : MonoBehaviour {
          if (indekss == 2){
             if (AtbildesTogglePogas[3].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta3");
             }
 
         }
          if (indekss == 3){
-            if (AtbildesTogglePogas[3].isOn)
+            if (AtbildesTogglePogas[1].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta4");
             }
 
@@ -89,7 +96,7 @@ public class Jautajumi : MonoBehaviour {
          if (indekss == 4){/////////
             if (AtbildesTogglePogas[0].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta5");
             }
 
@@ -97,7 +104,7 @@ public class Jautajumi : MonoBehaviour {
          if (indekss == 5){
             if (AtbildesTogglePogas[1].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta6");
             }
 
@@ -105,7 +112,7 @@ public class Jautajumi : MonoBehaviour {
          if (indekss == 6){
             if (AtbildesTogglePogas[1].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta7");
             }
 
@@ -113,7 +120,7 @@ public class Jautajumi : MonoBehaviour {
          if (indekss == 7){
             if (AtbildesTogglePogas[0].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta8");
             }
 
@@ -121,7 +128,7 @@ public class Jautajumi : MonoBehaviour {
          if (indekss == 8){
             if (AtbildesTogglePogas[2].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta9");
             }
 
@@ -129,7 +136,7 @@ public class Jautajumi : MonoBehaviour {
          if (indekss == 9){
             if (AtbildesTogglePogas[3].isOn)
             {
-               
+               PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta10");
             }
 
@@ -199,8 +206,29 @@ private void SaktTimer()
         float duration = TaimeraBeigas - TaimeraStarts;
         Debug.Log("Laiks Beidzās! Laiks: " + duration.ToString("F2") + " Sekundes");
         TextaLaiks.GetComponent<Text>().text ="Laiks: " +duration.ToString("F2") + " Sekundes";
+        CikNoCik.GetComponent<Text>().text=PareizasAtbildes+"/10";
+        if(PareizasAtbildes>=9f){
+                Zvaigzne1.SetActive(!Zvaigzne1.activeSelf);
+                Zvaigzne2.SetActive(!Zvaigzne2.activeSelf);
+                Zvaigzne3.SetActive(!Zvaigzne3.activeSelf);
+            }else if(PareizasAtbildes>=5f && PareizasAtbildes <=8){
+                Zvaigzne1.SetActive(!Zvaigzne1.activeSelf);
+                Zvaigzne2.SetActive(!Zvaigzne2.activeSelf);
+            }else{
+                Zvaigzne1.SetActive(!Zvaigzne1.activeSelf);
+            }
     }
 
 #endregion
 
+
+    #region ZvaigznesDala
+        // private void Zvaigznes(){
+        //     if(duration.ToString("F2")>=3f){
+        //         Zvaigzne1.SetActive(!Zvaigzne1.activeSelf);
+        //     }
+        // }
+
+
+    #endregion
 }
