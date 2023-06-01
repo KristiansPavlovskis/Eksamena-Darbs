@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Jautajumi : MonoBehaviour {
 
     private List<string> fragmenti = new List<string> {"kā mani sauc?", "mana suņa krāsa?", "kad man ir dzimšanas diena?", "Par ko es mācos?",
@@ -13,7 +14,9 @@ public class Jautajumi : MonoBehaviour {
     private List<string> fragmenti4 = new List<string> {"Tomijs", "Zila", "7", "Mehatroniķis","7","džeina","ugunsdzēsējs","iphone","Anna","Kristaps"};
 
     private int indekss = 0;
-
+ private bool Taimers = true;
+    public float TaimeraStarts;
+    public float TaimeraBeigas;
     public GameObject tekstaAttelosana;
     public Toggle[] AtbildesTogglePogas;
     public Button nakošaisJautajumsPoga;
@@ -22,12 +25,28 @@ public class Jautajumi : MonoBehaviour {
     public GameObject toggle3;
     public GameObject toggle4;
     public GameObject BeiguScreen;
-
+    public GameObject TextaLaiks;
     private void Start()
     {
         IzvaditJautajumu();
+        SaktTimer();
+    }
+    private void Update(){
+         if (Taimers)
+        {
+            if (indekss < 10 && !BeiguScreen.activeSelf)
+            {
+                TaimeraBeigas = Time.time;
+            }
+            else
+            {
+                Taimers = false;
+                BeigtTimer();
+            }
+        }
     }
 
+#region VissKasIrPrieksJautajumiem
     public void UzglabatTekstu()
     {
         if (indekss < fragmenti.Count)
@@ -165,4 +184,23 @@ public class Jautajumi : MonoBehaviour {
         }
         return false;
     }
+    #endregion
+
+#region TimeraDaļa
+private void SaktTimer()
+    {
+        TaimeraStarts = Time.time;
+        Debug.Log("Timer started!");
+    }
+
+    private void BeigtTimer()
+    {
+        TaimeraBeigas = Time.time;
+        float duration = TaimeraBeigas - TaimeraStarts;
+        Debug.Log("Laiks Beidzās! Laiks: " + duration.ToString("F2") + " Sekundes");
+        TextaLaiks.GetComponent<Text>().text ="Laiks: " +duration.ToString("F2") + " Sekundes";
+    }
+
+#endregion
+
 }
