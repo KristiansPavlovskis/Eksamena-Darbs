@@ -6,12 +6,26 @@ using UnityEngine.UI;
 
 public class Jautajumi : MonoBehaviour {
 
-    private List<string> fragmenti = new List<string> {"kā mani sauc?", "mana suņa krāsa?", "kad man ir dzimšanas diena?", "Par ko es mācos?",
-    "cik man ir pirksti?"," kā sauc manu suni?","Kurā skolā es mācos?","kādu telefona ražotāju es izmantoju?","manas māsas vārds?","mana skolotāja vārds"};
-    private List<string> fragmenti1 = new List<string> {"Kristians", "Balta", "4", "Pavāru","10","Madars","UML","Samsung","Sigita","kristoferis"};
-    private List<string> fragmenti2 = new List<string> {"Alekss", "Melna", "5", "Programmētāju","9","dora","LVT","HUAWEI","kristians","māris"};
-    private List<string> fragmenti3 = new List<string> {"Ralfs", "Dzelten", "6", "Frizieri","8","suns","RTU","lGato","Selita","rihards"};
-    private List<string> fragmenti4 = new List<string> {"Tomijs", "Zila", "7", "Mehatroniķis","7","džeina","ugunsdzēsējs","iphone","Anna","Kristaps"};
+    private List<string> fragmenti = new List<string> {"kādas komponentes var tikt pievienotas klāt pie GameObject?", "Kā var pakustināt GameObject?", "Kurš ir pareizs?",
+     "Kas notiek kad tu izdzēsi GameObjektu no ainas?","Kurš ir pareizs par vecāku-bērnu attiecībam starp GameObjektiem?",
+     "Kurš apgalvojums ir pareizs par GameObjekta aktīvo statusu?","Kurš apgalvojums ir pareizs par gameObjekta Layeru?",
+     "kurš apgalvojums ir pareizs par funkciju Instantiate()?","Kurš apgalvojums ir pareizs par GameObjekta redzamību?","kāda nozīme ir collideram uzliktam uz GameObjekta?"};
+    private List<string> fragmenti1 = new List<string> {"Mesh Renderer", "kustinot kameras pozīciju", "GameObjekti var būt tikai 3D",
+    "GameObjekts tiek izdzēsts no hierarchy","Vecāku GameObjektiem nevar būt komponentes klāt.",
+    "Neaktīvs GameObjekts tiek galīgi izņemts no ainas","Layer īpašības nosaka GameObjekta izmēru",
+    "Instantiate funkcija uzstaisa kopiju no GameObject","GameObjekta redzamība ir noteikta no viņas pozīcijas","tā nosaka GameObjekta pozīciju ainā"};
+    private List<string> fragmenti2 = new List<string> {"Audio Source", "mainot GameObjekta Tag", "GameObjekti ir vizuāli efekti priekš spēles",
+    "GameObjekts tiek izdzēsts neatgriezeniski","Bērnu GameObjekti paņem vecāku pozīciju un rotāciju",
+    "Neaktīvam gameObjektam nevar būt komponentes","Layer īpašība tiek izmantota lai pieliktu pielāgotu izskatu GameObjektam",
+    "Instantiate funkcija neatgriezeniski izdzēš GameObjektu no ainas","GameObjekta redzamība var būt kontrolēta mainot viņas alpha vērtību","tā kontrolē gameObjekta redzamību"};
+    private List<string> fragmenti3 = new List<string> {"Script", "Modifējot Transform komponenti", "GameObjekts ir veids kā parādīt vizuāli objektus kādā ainā",
+    "GameObjekts tiek iznīcināts un izņemts no ainas","Vecāku GameObjektiem var būt tikai 1 bērns",
+    "Neaktīvs GameObjekts neupdato vai izpilda scripts zem viņa","Layer īpašība tiek izmantota lai redzētu vai kautkas saskaras ar GameObjectu",
+    "Instantiate funkcija tikai strādā ar 3D GameObjektiem","GameObjekta redzamība var tikt ieslēgta un izslēgta ar viņās rendered komponenti","viņa definē GameObjekta formu un robežas priekš sadursmes"};
+    private List<string> fragmenti4 = new List<string> {"Light", "Mainot GameObjekta Layer", "NAV IZDOMĀTA ATBILDE VĒL",
+    "GameObjekts paliek neredzams un turpina dzīvot ainā","Bērnu GameObjektus nevar saredzēt ainā",
+    "pie Neaktīva GameObjekta nevar piekļūt caur koda","Layer īpašība var būt tikai uz tādiem GameObjektiem ar kuriem nevar saskarties",
+    "Instantie funkcija var tikai izmantot ja nopērk specifisku Unity Pro licenzi","GameObjekta redzamību nevar manuāli mainīt un tiek regulēta automātiski","Viņa atskaņo audio kad saskaras ar citu GameObjektu"};
 
     private int indekss = 0;
     private int PareizasAtbildes = 0;
@@ -31,6 +45,7 @@ public class Jautajumi : MonoBehaviour {
     public GameObject Zvaigzne1;
     public GameObject Zvaigzne2;
     public GameObject Zvaigzne3;
+    public AudioSource uzvara;
     private void Start()
     {
         Taimers = true;
@@ -146,6 +161,7 @@ public class Jautajumi : MonoBehaviour {
             indekss++;
         if(indekss==10){
              BeiguScreen.SetActive(!BeiguScreen.activeSelf);
+             uzvara.Play();
         }
             IzvaditJautajumu();
         }
