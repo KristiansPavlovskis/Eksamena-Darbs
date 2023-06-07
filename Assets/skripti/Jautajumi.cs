@@ -29,6 +29,7 @@ public class Jautajumi : MonoBehaviour {
 
     private int indekss = 0;
     private int PareizasAtbildes = 0;
+    private string NepareizasAtbildes = "";
  private bool Taimers = true;
     public float TaimeraStarts;
     public float TaimeraBeigas;
@@ -46,7 +47,10 @@ public class Jautajumi : MonoBehaviour {
     public GameObject Zvaigzne2;
     public GameObject Zvaigzne3;
     public AudioSource uzvara;
-    private void Start()
+    public GameObject NepareizasAtbildesTeksts;
+    public GameObject Atbildes;
+   
+ private void Start()
     {
         Taimers = true;
         IzvaditJautajumu();
@@ -76,12 +80,14 @@ public class Jautajumi : MonoBehaviour {
                 return;
 
                 if (indekss == 0)
-        {
+        { 
             if (AtbildesTogglePogas[0].isOn)
             {
                
                 Debug.Log("Pareizā atbilde tika ievadīta1");
                 PareizasAtbildes++;
+            }else{
+                NepareizasAtbildes+="1) kādas komponentes var tikt pievienotas klāt pie GameObject?";
             }
             
         }if (indekss == 1){
@@ -89,6 +95,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta2");
+            }else{
+                NepareizasAtbildes+="\n2) Kā var pakustināt GameObject?";
             }
 
         }
@@ -97,6 +105,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta3");
+            }else{
+                NepareizasAtbildes+="\n3) Kurš ir pareizs?";
             }
 
         }
@@ -105,6 +115,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta4");
+            }else{
+                NepareizasAtbildes+="\n4) Kas notiek kad tu izdzēsi GameObjektu no ainas?";
             }
 
         }
@@ -113,6 +125,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta5");
+            }else{
+                NepareizasAtbildes+="\n5) Kurš ir pareizs par vecāku-bērnu attiecībam starp GameObjektiem?";
             }
 
         }
@@ -121,6 +135,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta6");
+            }else{
+                NepareizasAtbildes+="\n6) Kurš apgalvojums ir pareizs par GameObjekta aktīvo statusu?";
             }
 
         }
@@ -129,6 +145,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta7");
+            }else{
+                NepareizasAtbildes+="\n7) Kurš apgalvojums ir pareizs par gameObjekta Layeru?";
             }
 
         }
@@ -137,6 +155,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta8");
+            }else{
+                NepareizasAtbildes+="\n8) kurš apgalvojums ir pareizs par funkciju Instantiate()?";
             }
 
         }
@@ -145,6 +165,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta9");
+            }else{
+                NepareizasAtbildes+="\n9) Kurš apgalvojums ir pareizs par GameObjekta redzamību?";
             }
 
         }
@@ -153,6 +175,8 @@ public class Jautajumi : MonoBehaviour {
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta10");
+            }else{
+                NepareizasAtbildes+="\n10) kāda nozīme ir collideram uzliktam uz GameObjekta?";
             }
 
         }
@@ -222,6 +246,7 @@ private void SaktTimer()
         float duration = TaimeraBeigas - TaimeraStarts;
         Debug.Log("Laiks Beidzās! Laiks: " + duration.ToString("F2") + " Sekundes");
         TextaLaiks.GetComponent<Text>().text ="Laiks: " +duration.ToString("F2") + " Sekundes";
+        NepareizasAtbildesTeksts.GetComponent<Text>().text = NepareizasAtbildes;
         CikNoCik.GetComponent<Text>().text=PareizasAtbildes+"/10";
         if(PareizasAtbildes>=9f){
                 Zvaigzne1.SetActive(!Zvaigzne1.activeSelf);
@@ -237,14 +262,10 @@ private void SaktTimer()
 
 #endregion
 
+public void BeiguAtbildes(){
+    
+    Atbildes.SetActive(!Atbildes.activeSelf);
 
-    #region ZvaigznesDala
-        // private void Zvaigznes(){
-        //     if(duration.ToString("F2")>=3f){
-        //         Zvaigzne1.SetActive(!Zvaigzne1.activeSelf);
-        //     }
-        // }
+} 
 
-
-    #endregion
 }

@@ -15,6 +15,9 @@ public class AinuParsledzejs : MonoBehaviour {
 	public void UzNoteikumiem(){
 		SceneManager.LoadScene (2, LoadSceneMode.Single);
 	}
+	public void UzAtbildem(){
+		SceneManager.LoadScene (3, LoadSceneMode.Single);
+	}
 	//Metode , kura aizver programmu, ja tā ir izveidota kā .exe
 	public void Apturet(){
 		Application.Quit();
