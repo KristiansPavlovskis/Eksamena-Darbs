@@ -89,7 +89,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[1].isOn || AtbildesTogglePogas[2].isOn || AtbildesTogglePogas[3].isOn)
             {
                
-                Debug.Log("Pareizā atbilde tika ievadīta1");
+                //Debug.Log("Pareizā atbilde tika ievadīta1");
                 PareizasAtbildes++;
             }else{
                 NepareizasAtbildes+="1) kādas komponentes var tikt pievienotas klāt pie GameObject?";
@@ -99,7 +99,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[1].isOn || AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta2");
+               // Debug.Log("Pareizā atbilde tika ievadīta2");
             }else{
                 NepareizasAtbildes+="\n2) Kā var pakustināt GameObject?";
             }
@@ -109,7 +109,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[2].isOn || AtbildesTogglePogas[3].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta3");
+               // Debug.Log("Pareizā atbilde tika ievadīta3");
             }else{
                 NepareizasAtbildes+="\n3) Kurš ir pareizs?";
             }
@@ -119,7 +119,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[1].isOn || AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta4");
+              //  Debug.Log("Pareizā atbilde tika ievadīta4");
             }else{
                 NepareizasAtbildes+="\n4) Kas notiek kad tu izdzēsi GameObjektu no ainas?";
             }
@@ -129,7 +129,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[1].isOn || AtbildesTogglePogas[3].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta5");
+              //  Debug.Log("Pareizā atbilde tika ievadīta5");
             }else{
                 NepareizasAtbildes+="\n5) Kurš ir pareizs par vecāku-bērnu attiecībam starp GameObjektiem?";
             }
@@ -139,7 +139,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[0].isOn || AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta6");
+               // Debug.Log("Pareizā atbilde tika ievadīta6");
             }else{
                 NepareizasAtbildes+="\n6) Kurš apgalvojums ir pareizs par GameObjekta aktīvo statusu?";
             }
@@ -149,7 +149,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[2].isOn || AtbildesTogglePogas[3].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta7");
+              //  Debug.Log("Pareizā atbilde tika ievadīta7");
             }else{
                 NepareizasAtbildes+="\n7) Kurš apgalvojums ir pareizs par gameObjekta Layeru?";
             }
@@ -159,7 +159,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[0].isOn || AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta8");
+               // Debug.Log("Pareizā atbilde tika ievadīta8");
             }else{
                 NepareizasAtbildes+="\n8) kurš apgalvojums ir pareizs par funkciju Instantiate()?";
             }
@@ -169,7 +169,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[1].isOn||AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta9");
+              //  Debug.Log("Pareizā atbilde tika ievadīta9");
             }else{
                 NepareizasAtbildes+="\n9) Kurš apgalvojums ir pareizs par GameObjekta Tags?";
             }
@@ -179,7 +179,7 @@ public class Jautajumi : MonoBehaviour {
             if (AtbildesTogglePogas[0].isOn || AtbildesTogglePogas[3].isOn)
             {
                PareizasAtbildes++;
-                Debug.Log("Pareizā atbilde tika ievadīta10");
+              //  Debug.Log("Pareizā atbilde tika ievadīta10");
             }else{
                 NepareizasAtbildes+="\n10) kāda nozīme ir transform komponentei uz GameObjekta?";
             }
@@ -245,7 +245,6 @@ public class Jautajumi : MonoBehaviour {
 private void SaktTimer()
     {
         TaimeraStarts = Time.time;
-        Debug.Log("Timer started!");
     }
 
     private void BeigtTimer()
@@ -253,7 +252,7 @@ private void SaktTimer()
         TaimeraBeigas = Time.time;
         float duration = TaimeraBeigas - TaimeraStarts;
         Debug.Log("Laiks Beidzās! Laiks: " + duration.ToString("F2") + " Sekundes");
-        TextaLaiks.GetComponent<Text>().text ="Laiks: " +duration.ToString("F2") + " Sekundes";
+        TextaLaiks.GetComponent<Text>().text ="Laiks: " +duration.ToString("F2") + " S";
         NepareizasAtbildesTeksts.GetComponent<Text>().text = NepareizasAtbildes;
         CikNoCik.GetComponent<Text>().text=PareizasAtbildes+"/10";
         if(PareizasAtbildes>=9f){
