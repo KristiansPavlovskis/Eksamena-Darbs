@@ -6,30 +6,35 @@ using UnityEngine.UI;
 
 public class Jautajumi : MonoBehaviour {
 
-    private List<string> fragmenti = new List<string> {"kādas komponentes var tikt pievienotas klāt pie GameObject?", "Kā var pakustināt GameObject?", "Kurš ir pareizs?",
-     "Kas notiek kad tu izdzēsi GameObjektu no ainas?","Kurš ir pareizs par vecāku-bērnu attiecībam starp GameObjektiem?",
-     "Kurš apgalvojums ir pareizs par GameObjekta aktīvo statusu?","Kurš apgalvojums ir pareizs par gameObjekta Layeru?",
-     "kurš apgalvojums ir pareizs par funkciju Instantiate()?","Kurš apgalvojums ir pareizs par GameObjekta redzamību?","kāda nozīme ir collideram uzliktam uz GameObjekta?"};
-    private List<string> fragmenti1 = new List<string> {"Mesh Renderer", "kustinot kameras pozīciju", "GameObjekti var būt tikai 3D",
-    "GameObjekts tiek izdzēsts no hierarchy","Vecāku GameObjektiem nevar būt komponentes klāt.",
-    "Neaktīvs GameObjekts tiek galīgi izņemts no ainas","Layer īpašības nosaka GameObjekta izmēru",
-    "Instantiate funkcija uzstaisa kopiju no GameObject","GameObjekta redzamība ir noteikta no viņas pozīcijas","tā nosaka GameObjekta pozīciju ainā"};
-    private List<string> fragmenti2 = new List<string> {"Audio Source", "mainot GameObjekta Tag", "GameObjekti ir vizuāli efekti priekš spēles",
-    "GameObjekts tiek izdzēsts neatgriezeniski","Bērnu GameObjekti paņem vecāku pozīciju un rotāciju",
-    "Neaktīvam gameObjektam nevar būt komponentes","Layer īpašība tiek izmantota lai pieliktu pielāgotu izskatu GameObjektam",
-    "Instantiate funkcija neatgriezeniski izdzēš GameObjektu no ainas","GameObjekta redzamība var būt kontrolēta mainot viņas alpha vērtību","tā kontrolē gameObjekta redzamību"};
-    private List<string> fragmenti3 = new List<string> {"Script", "Modifējot Transform komponenti", "GameObjekts ir veids kā parādīt vizuāli objektus kādā ainā",
-    "GameObjekts tiek iznīcināts un izņemts no ainas","Vecāku GameObjektiem var būt tikai 1 bērns",
-    "Neaktīvs GameObjekts neupdato vai izpilda scripts zem viņa","Layer īpašība tiek izmantota lai redzētu vai kautkas saskaras ar GameObjectu",
-    "Instantiate funkcija tikai strādā ar 3D GameObjektiem","GameObjekta redzamība var tikt ieslēgta un izslēgta ar viņās rendered komponenti","viņa definē GameObjekta formu un robežas priekš sadursmes"};
-    private List<string> fragmenti4 = new List<string> {"Light", "Mainot GameObjekta Layer", "NAV IZDOMĀTA ATBILDE VĒL",
-    "GameObjekts paliek neredzams un turpina dzīvot ainā","Bērnu GameObjektus nevar saredzēt ainā",
-    "pie Neaktīva GameObjekta nevar piekļūt caur koda","Layer īpašība var būt tikai uz tādiem GameObjektiem ar kuriem nevar saskarties",
-    "Instantie funkcija var tikai izmantot ja nopērk specifisku Unity Pro licenzi","GameObjekta redzamību nevar manuāli mainīt un tiek regulēta automātiski","Viņa atskaņo audio kad saskaras ar citu GameObjektu"};
+    private List<string> fragmenti = new List<string> {"kādas komponentes var manuāli tikt pievienotas klāt pie GameObject?", "Kā var pakustināt GameObject?",///12
+     "Kurš ir pareizs?","Kas notiek kad tu izdzēsi GameObjektu no ainas?",///////////////34
+     "Kurš ir pareizs par vecāku-bērnu attiecībam starp GameObjektiem?","Kurš  ir pareizs par GameObjekta aktīvo statusu?",//////////////////56
+     "Kurš apgalvojums ir pareizs par gameObjekta Layeru?","kurš apgalvojums ir pareizs par funkciju Instantiate()?",/////////////78
+     "Kurš apgalvojums ir pareizs par gameObjekta Tags?","kāda nozīme ir transform komponentei uz GameObjekta?"};//////910
+    private List<string> fragmenti1 = new List<string> {"Transform/RectTransform", "kustinot kameras pozīciju",
+     "GameObjekti var būt tikai 3D","GameObjekts tiek izdzēsts tikai no hierarchy",
+    "Vecāku GameObjektiem nevar būt komponentes klāt.","Neaktīvu gameObjektu vairs nevar saredzēt ainā",
+    "Layer īpašības nosaka GameObjekta izmēru","Instantiate funkcija uzstaisa kopiju no GameObject",
+    "ja vairākiem gameobjektiem ir vienāds tag ,tad viņi kustēsies kā viens ķermenis","tā nosaka GameObjekta pozīciju ainā"};
+    private List<string> fragmenti2 = new List<string> {"Audio Source", "Manuāli vilkt ainā",
+     "GameObjekti var būt tikai vizuāli efekti priekš spēles","GameObjekts tiek izdzēsts no unity projekta",
+    "Bērnu GameObjekti paņem vecāku pozīciju un rotāciju","Neaktīvam gameObjektam nevar būt komponentes",
+    "Layer īpašība tiek izmantota lai pieliktu pielāgotu izskatu GameObjektam","Instantiate funkcija neatgriezeniski izdzēš GameObjektu no ainas",
+    "Tags dod skriptam labāku veidu kā identificēt gameObjektu","tā kontrolē gameObjekta redzamību"};
+    private List<string> fragmenti3 = new List<string> {"Script", "Modifējot Transform komponenti",
+     "GameObjekts ir veids kā vizuāli parādīt objektus kādā ainā","GameObjekts tiek iznīcināts un izņemts no ainas",
+    "Vecāku GameObjektiem var būt tikai 1 bērns","Neaktīvs GameObjekts neupdato un neizpilda scripts zem viņa",
+    "Layer īpašība tiek izmantota lai redzētu vai kautkas saskaras ar GameObjektu","Instantiate var strādāt uz jebkuru gameObjektu ainā",
+    "tags var izmantot lai pārbaudītu vai objekts ir saskāries ar kautko","viņa definē robežas priekš GameObjekta kur viņš var iet"};
+    private List<string> fragmenti4 = new List<string> {"Light", "Mainot GameObjekta Layer",
+     "nav iespējami no GameObjekta noņemt transform komponenti","GameObjekts paliek neredzams un turpina dzīvot ainā",
+    "Bērnu GameObjektus nevar saredzēt ainā ja vecākas statuss ir izslēgts","pie Neaktīva GameObjekta nevar piekļūt caur koda",
+    "Layer īpašības var manipulēt caur kodu","Instantiate funkcija var tikai izmantot ja nopērk specifisku Unity Pro licenzi",
+    "ja kādam gameObjektam ir tag, un tas tag tiek izdzēsts, tad tie gameObjekti pazudīs ar viņu","transform kontrolē x, y, z koordinātas"};
 
     private int indekss = 0;
     private int PareizasAtbildes = 0;
-    private string NepareizasAtbildes = "";
+    private string NepareizasAtbildes = null;
  private bool Taimers = true;
     public float TaimeraStarts;
     public float TaimeraBeigas;
@@ -81,7 +86,7 @@ public class Jautajumi : MonoBehaviour {
 
                 if (indekss == 0)
         { 
-            if (AtbildesTogglePogas[0].isOn)
+            if (AtbildesTogglePogas[1].isOn || AtbildesTogglePogas[2].isOn || AtbildesTogglePogas[3].isOn)
             {
                
                 Debug.Log("Pareizā atbilde tika ievadīta1");
@@ -91,7 +96,7 @@ public class Jautajumi : MonoBehaviour {
             }
             
         }if (indekss == 1){
-            if (AtbildesTogglePogas[0].isOn)
+            if (AtbildesTogglePogas[1].isOn || AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta2");
@@ -101,7 +106,7 @@ public class Jautajumi : MonoBehaviour {
 
         }
          if (indekss == 2){
-            if (AtbildesTogglePogas[3].isOn)
+            if (AtbildesTogglePogas[2].isOn || AtbildesTogglePogas[3].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta3");
@@ -111,7 +116,7 @@ public class Jautajumi : MonoBehaviour {
 
         }
          if (indekss == 3){
-            if (AtbildesTogglePogas[1].isOn)
+            if (AtbildesTogglePogas[1].isOn || AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta4");
@@ -121,7 +126,7 @@ public class Jautajumi : MonoBehaviour {
 
         }
          if (indekss == 4){/////////
-            if (AtbildesTogglePogas[0].isOn)
+            if (AtbildesTogglePogas[1].isOn || AtbildesTogglePogas[3].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta5");
@@ -131,7 +136,7 @@ public class Jautajumi : MonoBehaviour {
 
         }
          if (indekss == 5){
-            if (AtbildesTogglePogas[1].isOn)
+            if (AtbildesTogglePogas[0].isOn || AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta6");
@@ -141,7 +146,7 @@ public class Jautajumi : MonoBehaviour {
 
         }
          if (indekss == 6){
-            if (AtbildesTogglePogas[1].isOn)
+            if (AtbildesTogglePogas[2].isOn || AtbildesTogglePogas[3].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta7");
@@ -151,7 +156,7 @@ public class Jautajumi : MonoBehaviour {
 
         }
          if (indekss == 7){
-            if (AtbildesTogglePogas[0].isOn)
+            if (AtbildesTogglePogas[0].isOn || AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta8");
@@ -161,25 +166,28 @@ public class Jautajumi : MonoBehaviour {
 
         }
          if (indekss == 8){
-            if (AtbildesTogglePogas[2].isOn)
+            if (AtbildesTogglePogas[1].isOn||AtbildesTogglePogas[2].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta9");
             }else{
-                NepareizasAtbildes+="\n9) Kurš apgalvojums ir pareizs par GameObjekta redzamību?";
+                NepareizasAtbildes+="\n9) Kurš apgalvojums ir pareizs par GameObjekta Tags?";
             }
 
         }
          if (indekss == 9){
-            if (AtbildesTogglePogas[3].isOn)
+            if (AtbildesTogglePogas[0].isOn || AtbildesTogglePogas[3].isOn)
             {
                PareizasAtbildes++;
                 Debug.Log("Pareizā atbilde tika ievadīta10");
             }else{
-                NepareizasAtbildes+="\n10) kāda nozīme ir collideram uzliktam uz GameObjekta?";
+                NepareizasAtbildes+="\n10) kāda nozīme ir transform komponentei uz GameObjekta?";
             }
-
+                if(NepareizasAtbildes==null){
+        NepareizasAtbildes+="Jums nav nepareizas atbildes!!";
+    }
         }
+        
 
 
             indekss++;
