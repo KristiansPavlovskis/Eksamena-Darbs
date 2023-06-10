@@ -12,4 +12,5 @@
 - [X] Beigu Ekrans
 - [X] Info ekrāns priekš visām nepareizām jautājumu ievadēm
   
- ## *Links uz pašu spēli*
+ ## *Mācību Materiāls*
+  
